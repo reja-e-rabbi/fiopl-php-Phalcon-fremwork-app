@@ -1,0 +1,145 @@
+<?php $this->partial('layouts/head'); ?>
+<body>
+    <div class="site">
+        <div class="flex-col just-center">
+            <header class="order-1">
+                <?php $this->partial('layouts/header'); ?>
+            </header>
+            <main class="order-2 grid container">
+                <aside class="asid-display pad-top-25 dis-b-n">
+                    <?php $this->partial('layouts/aside'); ?>
+                </aside>
+                <article>
+                    <?php //echo $var; ?>
+                    <?php 
+                      $arr = json_decode($var, true);
+                      $success = $arr['success'][0];
+                      $value = $arr['value'];
+                      $tab = $arr['data']['data_list'];
+                      $tab_count = count($tab);
+                    ?>
+                  <div class="name">
+                    <p class="font-vardana space-1px black-50 pad-top-25 border-bot-w-80 pad-bot-10 pad-left-10 uppercase font-size-12">User \ List</p>
+                  </div>
+                  <div class="grid">
+                    <div class="top-pill-card">
+                      <div class="flex-row just-center">
+                        <div class="pill-card rect pad-10">
+                          <div class="flex-row">
+                            <p class="pad-lef-10 font-size-20 order-1">Event</p>
+                            <p class="pad-left-25 left order-2 font-size-15">- 2.3</p>
+                          </div>
+                          <div class="flex-row just-center">
+                            <div class="flex-col order-1 mar-pad-0">
+                              <p class="font-size-30 mar-pad-0">230</p>
+                              <p class="font-size-12 mar-pad-0 space-1px italic pointer underline-hover">click this link</p>
+                            </div>
+                            <div class="order-2">
+                              <p class="font-size-25 text-center round pointer">es</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pill-card rect pad-10">
+                          <div class="flex-row">
+                            <p class="pad-lef-10 font-size-20 order-1">Event</p>
+                            <p class="pad-left-25 left order-2 font-size-15">- 2.3</p>
+                          </div>
+                          <div class="flex-row just-center">
+                            <div class="flex-col order-1 mar-pad-0">
+                              <p class="font-size-30 mar-pad-0">230</p>
+                              <p class="font-size-12 mar-pad-0 space-1px italic pointer underline-hover">click this link</p>
+                            </div>
+                            <div class="order-2">
+                              <p class="font-size-25 text-center round pointer">es</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pill-card rect pad-10">
+                          <div class="flex-row">
+                            <p class="pad-lef-10 font-size-20 order-1">Event</p>
+                            <p class="pad-left-25 left order-2 font-size-15">- 2.3</p>
+                          </div>
+                          <div class="flex-row just-center">
+                            <div class="flex-col order-1 mar-pad-0">
+                              <p class="font-size-30 mar-pad-0">230</p>
+                              <p class="font-size-12 mar-pad-0 space-1px italic pointer underline-hover">click this link</p>
+                            </div>
+                            <div class="order-2">
+                              <p class="font-size-25 text-center round pointer">es</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pill-card rect pad-10">
+                          <div class="flex-row">
+                            <p class="pad-lef-10 font-size-20 order-1">Event</p>
+                            <p class="pad-left-25 left order-2 font-size-15">- 2.3</p>
+                          </div>
+                          <div class="flex-row just-center">
+                            <div class="flex-col order-1 mar-pad-0">
+                              <p class="font-size-30 mar-pad-0">230</p>
+                              <p class="font-size-12 mar-pad-0 space-1px italic pointer underline-hover">click this link</p>
+                            </div>
+                            <div class="order-2">
+                              <p class="font-size-25 text-center round pointer">es</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="list-table">
+                      <div class="activity">
+                        <div class="title">
+                          <p class="pad-top-50 pad-left-25 f-700">Recent Activity:</p>
+                        </div>
+                        <div class="table-ativity flex-row just-center">
+                          <table class="table-note">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>Sumarry</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                    <?php
+                      if(true == $success){
+                        switch ($value) {
+                          case 'all-user':
+                            for ($i=0; $i < $tab_count; $i++) { 
+                              echo '<tr>
+                              <td class="flex-col just-center" ><img class="w-h-30 mar-top-10p" src="../img/man5.jpg" alt=""><p class="font-size-10 pad-top-10">'.$tab[$i]["name"].'</p></td>
+                              <td class="pad-5 max-w-300 pointer o-9">Email: '.$tab[$i]["email"].', Phone: '.$tab[$i]["phone"].', Status: '.$tab[$i]["statuses"].', Rolls: '.$tab[$i]["rolls"].', ID: '.$tab[$i]["id"].'</td>
+                              <td><select name="action" class="table-select font-size-12 uppercase">
+                                    <option value="" class="uppercase font-size-12 space-1px">Action</option>
+                                    <option value="view" class="uppercase font-size-12 space-1px">view</option>
+                                    <option value="edith" class="uppercase font-size-12 space-1px">edith</option>
+                                    <option value="delete" class="uppercase font-size-12 space-1px">delete</option>
+                                  </select></td>
+                              </tr>';
+                            }
+                            break;
+                          
+                          default:
+                            # code...
+                            break;
+                        }
+                      }elseif(false == $success){
+                        echo '<p>'.$arr["success"][0].'</p>';
+                      }
+                    ?>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="more flex-row just-center">
+                          <p class="pointer space-1px" data-id="<?php $tab[$tab_count]['detect']; ?>">load</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+            </main>
+        </div>
+    </div>
+    <script src="../app/view/user/list.js"></script>
+</body>
+</html>

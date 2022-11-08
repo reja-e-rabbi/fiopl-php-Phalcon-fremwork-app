@@ -1,0 +1,19 @@
+<?php $this->partial('layouts/head'); ?>
+<body>
+    <div class="site">
+        <div class="flex-col just-center">
+            <header class="order-1">
+                <?php $this->partial('layouts/header'); ?>
+            </header>
+            <main class="order-2 grid container">
+                <aside class="asid-display pad-top-25 dis-b-n">
+                    <?php $this->partial('layouts/aside'); ?>
+                </aside>
+                <article>
+                    <?php $this->partial('create/user'); ?>
+                </article>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

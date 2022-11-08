@@ -1,0 +1,14 @@
+@import url("normalize.min.css");
+@import url("milligram.min.css");
+@import url("custom.css");
+
+@media(min-width:100px){
+    .svg-big svg{
+        width: 200px;
+    }
+}
+@media(min-width:800px){
+    .svg-big svg{
+        width: 400px;
+    }
+}

@@ -1,0 +1,94 @@
+<div class="name">
+                        <p class="font-vardana space-1px black-50 pad-top-25 border-bot-w-80 pad-bot-10 pad-left-10 uppercase font-size-12">User \ Create</p>
+                      </div>
+                      <div class="grid">
+                        <div class="top-pill-card">
+                          <div class="flex-row just-center">
+                          </div>
+                        </div>
+                        <div class="list-table">
+                            <div class="title">
+                                <p class="pad-top-50 pad-left-25 f-700">Create User:</p>
+                            </div>
+                            <div class="flex-row just-center">
+                                <div class="form-controls">
+                                    <form action="/create/user" method="post" name="create-user" class="flex-col just-center pad-top-25 pad-left-write-25 radius-5p">
+                                        <div class="form-group">
+                                            <div class="form-set">
+                                                <div class="form-level">
+                                                    <label for="select">Rolls:</label>
+                                                </div>
+                                                <div class="form-input">
+                                                    <select name="select" required="required">
+                                                        <option value=" ">Select</option>
+                                                        <option value="admin">Admin</option>
+                                                        <option value="manager">Manager</option>
+                                                        <option value="service-man">Company</option>
+                                                        <option value="mordarator">Mordarator</option>
+                                                        <option value="editor">Editor</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-text">
+                                                    <p class="rolls-user mar-pad-0 font-size-12 f-700"></p>
+                                                </div>
+                                            </div>
+                                            <div class="in-group">
+                                                <div class="in-level">
+                                                    <label for="name">Email:</label>
+                                                </div>
+                                                <div class="in-form">
+                                                    <input class="mar-pad-0" type="email" name="email" id="" minlength="5" maxlength="32" required="required">
+                                                </div>
+                                                <div class="pre-tag">
+                                                    <p class="email font-size-12 f-700"></p>
+                                                </div>
+                                            </div>
+                                            <div class="in-group">
+                                                <div class="in-level">
+                                                    <label for="password">Name:</label>
+                                                </div>
+                                                <div class="in-form">
+                                                    <input class="mar-pad-0" type="text" name="name" id="" minlength="4" maxlength="32" required="required">
+                                                </div>
+                                                <div class="pre-tag">
+                                                    <p class="name-form font-size-12 f-700"></p>
+                                                </div>
+                                            </div>
+                                            <div class="in-group">
+                                                <div class="in-level">
+                                                    <label for="password">Contact:</label>
+                                                </div>
+                                                <div class="in-form">
+                                                    <input class="mar-pad-0" type="text" name="contact" id="" minlength="4" maxlength="32" required="required">
+                                                </div>
+                                                <div class="pre-tag">
+                                                    <p class="tel-form-2 font-size-12 f-700"></p>
+                                                </div>
+                                            </div>
+                                            <div class="in-group">
+                                                <div class="in-level">
+                                                    <label for="password">Password:</label>
+                                                </div>
+                                                <div class="in-form">
+                                                    <input class="mar-pad-0" type="password" name="password" id="" minlength="4" maxlength="32" required="required">
+                                                </div>
+                                                <div class="pre-tag">
+                                                    <p class="password font-size-12 f-700"></p>
+                                                </div>
+                                            </div>
+                                            <div class="form-set pad-top-bot-10">
+                                                <div class="form-input">
+                                                    <p data-id="create-user" class="sub button button-outline">Submit</p>
+                                                </div>
+                                            </div>
+                                            <div class="in-group">
+                                                <div class="default in-form pad-top-25">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <script type="module" src="../js/userCreate.js"></script>
